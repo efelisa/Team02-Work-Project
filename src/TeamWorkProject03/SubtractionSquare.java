@@ -55,7 +55,7 @@ public class SubtractionSquare {
 
     }
 
-    private static int substSquare(int sayi,int sayi2) {
+    public static int substSquare(int sayi,int sayi2) {
         int toplam=0;
         for(int i=0;i<=sayi;i++){
             toplam+=i;
