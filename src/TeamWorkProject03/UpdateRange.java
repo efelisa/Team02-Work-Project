@@ -1,6 +1,7 @@
 package TeamWorkProject03;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class UpdateRange {
 
@@ -44,11 +45,28 @@ public class UpdateRange {
          */
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Plz enter a few numbers in:");
+        String str = sc.nextLine();
+        System.out.println("Plz enter ur first number in:");
+        int numb1 = sc.nextInt();
+        System.out.println("Plz enter ur first number in:");
+        int numb2 = sc.nextInt();
+        int[] arr = Arrays.stream(str.split(",")).mapToInt(Integer::parseInt).toArray();
 
-
-
+        System.out.println(Arrays.toString(uRange(arr, numb1, numb2)));
     }
 
+    public static int[] uRange(int[] arr, int numb1, int numb2) {
+        int max = Math.max(numb1, numb2);
+        int min = Math.min(numb1, numb2);
 
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < max && arr[i] > min) {
+                arr[i] = -1;
+            }
+        }
+        return arr;
+    }
 
 }
