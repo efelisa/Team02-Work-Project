@@ -45,28 +45,26 @@ public class UpdateRange {
          */
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Plz enter a few numbers in:");
-        String str = sc.nextLine();
-        System.out.println("Plz enter ur first number in:");
-        int numb1 = sc.nextInt();
-        System.out.println("Plz enter ur first number in:");
-        int numb2 = sc.nextInt();
-        int[] arr = Arrays.stream(str.split(",")).mapToInt(Integer::parseInt).toArray();
 
-        System.out.println(Arrays.toString(uRange(arr, numb1, numb2)));
+        int[] arr = {1, 6, 12, 15, 22, 18, 30, 16};
+        int[] result = uRange(arr, 10, 20);
+        System.out.println(Arrays.toString(result));
+
+        uRange(arr,10,20);
+
     }
 
-    public static int[] uRange(int[] arr, int numb1, int numb2) {
-        int max = Math.max(numb1, numb2);
-        int min = Math.min(numb1, numb2);
+    public static int[] uRange(int[] arr, int num1, int num2) {
 
+        int[] result = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < max && arr[i] > min) {
-                arr[i] = -1;
+            if (arr[i] >= num1 && arr[i] <= num2) {
+                result[i] = -1;
+            } else {
+                result[i] = arr[i];
             }
         }
-        return arr;
+        return result;
     }
 
 }
