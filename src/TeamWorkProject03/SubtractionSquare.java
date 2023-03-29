@@ -44,7 +44,28 @@ public class SubtractionSquare {
     */
     public static void main(String[] args) {
 
+        Scanner scan=new Scanner(System.in);
+        System.out.println("1. sayıyı giriniz");
+        int sayi=scan.nextInt();
+        System.out.println("2. sayıyı giriniz");
+        int sayi2=scan.nextInt();
 
+        System.out.println("substSquare(sayi, sayi2) = " + substSquare(sayi, sayi2));
+
+
+    }
+
+    private static int substSquare(int sayi,int sayi2) {
+        int toplam=0;
+        for(int i=0;i<=sayi;i++){
+            toplam+=i;
+        }
+        int toplam2=0;
+        for(int j=0; j<=sayi2;j++){
+            toplam2+=j;
+        }
+
+        return toplam*toplam +toplam2*toplam2;
         }
 
 
