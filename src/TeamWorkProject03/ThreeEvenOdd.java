@@ -1,5 +1,6 @@
 package TeamWorkProject03;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ThreeEvenOdd {
@@ -33,6 +34,29 @@ public class ThreeEvenOdd {
     */
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Plz enter an Array of min 3 numbers: ");
+        String numb = sc.nextLine();
+        int[] arr = Arrays.stream(numb.split(" ")).mapToInt(Integer::parseInt).toArray();
+
+        System.out.println(threeEvenOrOdd(arr));
+
     }
+    public static boolean threeEvenOrOdd(int[] arr) {
+        boolean b = false;
+        int evenCount = 0;
+        int oddCount = 0;
+        for (int x : arr) {
+            if (x % 2 == 0) {
+                evenCount++;
+
+            } else oddCount++;
+
+        }
+        if (evenCount >= 3 || oddCount >= 3) {
+            b = true;
+        }
+
+        return b;    }
 
 }
