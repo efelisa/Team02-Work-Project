@@ -1,5 +1,7 @@
 package TeamWorkProject03;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class getPopulation {
@@ -55,6 +57,27 @@ public class getPopulation {
 
      */
     public static void main(String[] args) {
+
+        String countryNames[] = {"USA" ,"Mexico" ,"Canada"};
+        int countryPopulations[] = {100000 , 120000 , 130000};
+
+
+        Scanner scan  = new Scanner(System.in);
+        System.out.print("Ulke ismi giriniz : ");
+        String country = scan.nextLine();
+
+
+        System.out.println("Population of "+country + " = " + populationOfCountry(countryNames, countryPopulations, country));
+
+    }
+
+    private static int populationOfCountry(String[] countryNames, int[] countryPopulations, String country) {
+        ArrayList<String> list = new ArrayList<>(Arrays.asList(countryNames));
+
+        if (list.contains(country)) {
+            int index = list.indexOf(country);
+            return countryPopulations[index];
+        } return -1;
 
     }
 }
